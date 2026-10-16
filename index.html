@@ -142,10 +142,10 @@ const CATS = [
  {id:"magnolya", t:"Magnolyalar", note:"Bisküvi, krema ve taze meyveyle, bardakta.", items:[
   {n:"Çilekli Magnolya", d:"Taze çilek ve vanilyalı krema.", p:200},
   {n:"Çilek Muz Magnolya", d:"Çilek ve muz, kremayla katmanlı.", p:200},
-  {n:"Oreolu Magnolya", d:"Ezilmiş Oreo ve sütlü krema.", p:200},
-  {n:"Antep Fıstıklı Magnolya", d:"Antep fıstığı serpilmiş krema.", p:200},
-  {n:"Orman Meyveli Magnolya", d:"Orman meyvesi sosuyla ferah.", p:200},
-  {n:"Frambuazlı Magnolya", d:"Ekşimsi frambuaz, tatlı krema.", p:200},
+  {n:"Oreolu Magnolya", d:"Ezilmiş Oreo ve sütlü krema.", p:200, img:"oreolu-magnolya"},
+  {n:"Antep Fıstıklı Magnolya", d:"Antep fıstığı serpilmiş krema.", p:200, img:"antep-magnolya"},
+  {n:"Orman Meyveli Magnolya", d:"Orman meyvesi sosuyla ferah.", p:200, img:"orman-magnolya"},
+  {n:"Frambuazlı Magnolya", d:"Ekşimsi frambuaz, tatlı krema.", p:200, img:"frambuazli-magnolya"},
   {n:"Dubai Magnolya", d:"Kadayıf ve fıstık kreması, çıtır dokulu.", p:250, tag:"Yeni", img:"dubai-magnolya"},
   {n:"Bademli-Çikolatalı Magnolya", d:"Bademli çikolata ve krema.", p:250, img:"bademli-magnolya"},
   {n:"Lotus-Muz Magnolya", d:"Lotus bisküvisi ve muz.", p:250}
@@ -156,10 +156,10 @@ const CATS = [
   {n:"Tel Kadayıflı Muhallebi", d:"Çıtır tel kadayıfla.", p:185},
   {n:"Antep Fıstıklı Muhallebi", d:"Bol Antep fıstıklı.", p:185},
   {n:"Oreolu Muhallebi", d:"Oreo parçacıklı.", p:185},
-  {n:"Sütlaç", d:"Fırınlanmış, geleneksel.", p:200}
+  {n:"Sütlaç", d:"Fırınlanmış, geleneksel.", p:200, img:"sutlac"}
  ]},
  {id:"cheesecake", t:"Cheesecake'ler", note:"Kremsi, yoğun, soğuk servis.", items:[
-  {n:"Limonlu Cheesecake", d:"Ferah limon dokunuşu.", p:245},
+  {n:"Limonlu Cheesecake", d:"Ferah limon dokunuşu.", p:245, img:"limonlu-cheesecake"},
   {n:"Frambuazlı Cheesecake", d:"Frambuaz soslu.", p:245, img:"frambuazli-cheesecake"},
   {n:"Lotuslu Cheesecake", d:"Lotus kreması ve bisküvi.", p:275, img:"lotus-cheesecake"},
   {n:"San Sebastian", d:"Yanık yüzeyli, akışkan merkezli.", p:275, tag:"Favori", img:"san-sebastian"}
@@ -204,7 +204,7 @@ const CATS = [
   {n:"Kahvaltı Tabağı", d:"Zengin, doyurucu.", p:350}
  ]},
  {id:"yas", t:"Yaş Pasta", note:"Doğum günü ve özel günler için. Siparişle hazırlanır.", items:[
-  {n:"4-6 Kişilik Yaş Pasta", d:"", p:700},
+  {n:"4-6 Kişilik Yaş Pasta", d:"", p:700, img:"yas-pasta"},
   {n:"8-10 Kişilik Yaş Pasta", d:"", p:800}
  ]},
  {id:"kahve", t:"Kahveler", note:"Sıcak kahveler ve çaylar.", items:[
@@ -223,19 +223,19 @@ const CATS = [
  ]},
  {id:"soguk-kahve", t:"Soğuk Kahveler", note:"Buzlu ve ferah.", items:[
   {n:"Ice Latte", d:"", p:185},
-  {n:"Ice Caramel Latte", d:"", p:190},
+  {n:"Ice Caramel Latte", d:"", p:190, img:"ice-caramel"},
   {n:"Ice Filtre", d:"", p:180},
   {n:"Ice Americano", d:"", p:170},
   {n:"Ice Spanish Latte", d:"Tatlı, sütlü ve kremsi.", p:200},
   {n:"Ice Mocha", d:"", p:190},
-  {n:"Frozen", d:"", p:190},
-  {n:"Matcha", d:"", p:195},
-  {n:"Milkshake", d:"", p:195},
+  {n:"Frozen", d:"", p:190, img:"frozen"},
+  {n:"Matcha", d:"", p:195, img:"matcha"},
+  {n:"Milkshake", d:"", p:195, img:"milkshake"},
   {n:"Affogato", d:"Dondurma üzerine sıcak espresso.", p:230}
  ]},
  {id:"icecek", t:"Soğuk İçecekler", note:"Meşrubat, limonata ve ferahlatıcılar.", items:[
-  {n:"Cool Lime", d:"Taze lime ile ferah.", p:200},
-  {n:"Berry Hibiscus", d:"Orman meyveli, hibiskus çaylı.", p:200},
+  {n:"Cool Lime", d:"Taze lime ile ferah.", p:200, img:"cool-lime"},
+  {n:"Berry Hibiscus", d:"Orman meyveli, hibiskus çaylı.", p:200, img:"berry-hibiscus"},
   {n:"Limonata", d:"", p:200},
   {n:"Portakal Suyu", d:"", p:200},
   {n:"Churchill", d:"", p:150},
