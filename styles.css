@@ -142,3 +142,11 @@ dialog::backdrop { background: rgba(14,12,10,.55); backdrop-filter: blur(3px) }
   .list { grid-template-columns: 1fr 1fr }
   .item .ph { width: 104px; height: 104px }
 }
+
+/* ---------- Gallery ---------- */
+.gallery{max-width:760px;margin:0 auto;padding:8px 0 36px}
+.g-track{display:flex;gap:10px;overflow-x:auto;padding:4px 16px 12px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.g-track::-webkit-scrollbar{display:none}
+.g-track figure{flex:none;width:min(58vw,230px);scroll-snap-align:start;border-radius:var(--r);overflow:hidden;background:var(--ink);position:relative}
+.g-track img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.g-track figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-size:.78rem;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(14,12,10,.75))}

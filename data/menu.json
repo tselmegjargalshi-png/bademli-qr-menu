@@ -949,7 +949,7 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "/assets/menu/ice-latte.webp",
+   "img": "/assets/menu/ice-latte-s.webp",
    "badge": "",
    "featured": false,
    "available": true
@@ -963,7 +963,7 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "/assets/menu/ice-caramel-latte.webp",
+   "img": "/assets/menu/ice-caramel-latte-s.webp",
    "badge": "",
    "featured": true,
    "available": true
@@ -977,7 +977,7 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "",
+   "img": "/assets/menu/ice-filtre-s.webp",
    "badge": "",
    "featured": false,
    "available": true
@@ -991,7 +991,7 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "/assets/menu/ice-americano.webp",
+   "img": "/assets/menu/ice-americano-s.webp",
    "badge": "",
    "featured": false,
    "available": true
@@ -1005,7 +1005,7 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "/assets/menu/ice-spanish-latte.webp",
+   "img": "/assets/menu/ice-spanish-latte-s.webp",
    "badge": "",
    "featured": true,
    "available": true
@@ -1019,7 +1019,7 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "/assets/menu/ice-mocha.webp",
+   "img": "/assets/menu/ice-mocha-s.webp",
    "badge": "",
    "featured": false,
    "available": true
@@ -1089,7 +1089,7 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "/assets/menu/limonata.webp",
+   "img": "/assets/menu/limonata-s.webp",
    "badge": "",
    "featured": false,
    "available": true
@@ -1187,7 +1187,7 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "/assets/menu/cool-lime.webp",
+   "img": "/assets/menu/cool-lime-s.webp",
    "badge": "",
    "featured": false,
    "available": true
@@ -1201,7 +1201,7 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "/assets/menu/berry-hibiscus.webp",
+   "img": "/assets/menu/berry-hibiscus-s.webp",
    "badge": "",
    "featured": true,
    "available": true
@@ -1215,7 +1215,7 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "/assets/menu/frozen.webp",
+   "img": "/assets/menu/frozen-s.webp",
    "badge": "",
    "featured": false,
    "available": true
@@ -1229,7 +1229,7 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "/assets/menu/matcha.webp",
+   "img": "/assets/menu/matcha-s.webp",
    "badge": "",
    "featured": true,
    "available": true
@@ -1243,10 +1243,56 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "/assets/menu/milkshake.webp",
+   "img": "/assets/menu/milkshake-s.webp",
    "badge": "",
    "featured": false,
    "available": true
+  }
+ ],
+ "gallery": [
+  {
+   "img": "/assets/menu/g-dsc1404.webp",
+   "caption": "Matcha latte"
+  },
+  {
+   "img": "/assets/menu/g-dsc1406.webp",
+   "caption": "Orman meyveli latte"
+  },
+  {
+   "img": "/assets/menu/g-dsc1411.webp",
+   "caption": "Soğuk içecek"
+  },
+  {
+   "img": "/assets/menu/g-dsc1431.webp",
+   "caption": "Karamelli içecek"
+  },
+  {
+   "img": "/assets/menu/g-dsc1441.webp",
+   "caption": "Çikolatalı soğuk içecek"
+  },
+  {
+   "img": "/assets/menu/g-dsc1452.webp",
+   "caption": "Özel kokteyl bardağı"
+  },
+  {
+   "img": "/assets/menu/g-dsc1458.webp",
+   "caption": "Kırmızı meyveli içecek"
+  },
+  {
+   "img": "/assets/menu/g-dsc1464.webp",
+   "caption": "Hibiskuslu içecek"
+  },
+  {
+   "img": "/assets/menu/g-dsc1469.webp",
+   "caption": "Sütlü soğuk içecek"
+  },
+  {
+   "img": "/assets/menu/g-dsc1476.webp",
+   "caption": "Ferah yeşil içecek"
+  },
+  {
+   "img": "/assets/menu/g-dsc1487.webp",
+   "caption": "Meyveli buzlu içecek"
   }
  ]
 }

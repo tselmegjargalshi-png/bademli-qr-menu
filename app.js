@@ -80,6 +80,9 @@
     $('#featured').hidden = !!q || !feat.length;
     $('#f-track').innerHTML = feat.map((it) => `<button class="f-card" data-id="${esc(it.id)}">${photo(it)}<div class="f-info"><h3>${esc(it.name)}</h3>${priceHtml(it)}</div></button>`).join('');
     $('#chips').hidden = !!q;
+    const g = (menu.gallery || []).filter((x) => x.img);
+    $('#gallery').hidden = !!q || !g.length;
+    $('#g-track').innerHTML = g.map((x) => `<figure><img src="${esc(x.img)}" alt="${esc(x.caption || 'Bademli')}" loading="lazy" decoding="async">${x.caption ? `<figcaption>${esc(x.caption)}</figcaption>` : ''}</figure>`).join('');
   }
 
   // ---- search

@@ -55,5 +55,6 @@ export function validateMenu(m) {
     seen.add(item.id);
     return item;
   });
-  return { version: 1, settings, categories, items };
+  const gallery = (Array.isArray(m.gallery) ? m.gallery : []).slice(0, 40).map((g) => ({ img: url(g.img), caption: str(g.caption, 80) })).filter((g) => g.img);
+  return { version: 1, settings, categories, items, gallery };
 }
