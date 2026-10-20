@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0e0c0a">
+<title>Bademli · Yönetim Paneli</title>
+<link rel="icon" type="image/png" href="/assets/logo-96.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<section id="login" class="login" hidden>
+  <form id="login-form" class="login-card" autocomplete="on">
+    <img src="/assets/logo-192.png" width="96" height="96" alt="Bademli">
+    <h1>Yönetim Paneli</h1>
+    <p>Menüyü düzenlemek için giriş yapın.</p>
+    <label>Kullanıcı adı<input name="user" autocomplete="username" required autocapitalize="none" spellcheck="false"></label>
+    <label>Şifre<input name="password" type="password" autocomplete="current-password" required></label>
+    <p class="err" id="login-err" role="alert"></p>
+    <button class="btn primary" type="submit">Giriş Yap</button>
+    <a class="back" href="/">← Menüye dön</a>
+  </form>
+</section>
+
+<div id="app" hidden>
+  <header class="top">
+    <div class="top-in">
+      <img src="/assets/logo-96.png" width="38" height="38" alt="">
+      <strong>Bademli Yönetim</strong>
+      <span class="grow"></span>
+      <span class="dirty" id="dirty" hidden>Kaydedilmemiş değişiklik</span>
+      <button class="btn primary" id="save" disabled>Kaydet</button>
+      <a class="btn" href="/" target="_blank" rel="noopener">Menüyü Gör</a>
+      <button class="btn ghost" id="logout">Çıkış</button>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="items" aria-selected="true">Ürünler</button>
+      <button role="tab" data-tab="cats" aria-selected="false">Kategoriler</button>
+      <button role="tab" data-tab="settings" aria-selected="false">Bilgiler</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="tab-items">
+      <div class="tools">
+        <input id="f-q" type="search" placeholder="Ürün ara…" aria-label="Ürün ara">
+        <select id="f-cat" aria-label="Kategori filtresi"></select>
+        <button class="btn primary" id="add-item">+ Yeni Ürün</button>
+      </div>
+      <div id="item-list" class="rows"></div>
+    </section>
+
+    <section id="tab-cats" hidden>
+      <div class="tools"><button class="btn primary" id="add-cat">+ Yeni Kategori</button></div>
+      <div id="cat-list" class="rows"></div>
+    </section>
+
+    <section id="tab-settings" hidden>
+      <form id="settings-form" class="card form-grid"></form>
+    </section>
+  </main>
+</div>
+
+<dialog id="dlg">
+  <form id="item-form" method="dialog">
+    <header><h2 id="dlg-title">Ürün</h2><button type="button" class="x" id="dlg-x" aria-label="Kapat">×</button></header>
+    <div class="dlg-body">
+      <div class="img-edit">
+        <div class="img-prev" id="img-prev"></div>
+        <div class="img-btns">
+          <label class="btn">Görsel Seç / Değiştir<input type="file" id="img-file" accept="image/*" hidden></label>
+          <button type="button" class="btn ghost" id="img-del">Görseli Kaldır</button>
+          <p class="hint" id="img-hint">Görsel otomatik küçültülüp yüklenir.</p>
+        </div>
+      </div>
+      <label>Ürün adı<input name="name" required maxlength="120"></label>
+      <label>Açıklama<textarea name="desc" rows="3" maxlength="500"></textarea></label>
+      <div class="two">
+        <label>Fiyat (₺)<input name="price" inputmode="decimal" placeholder="örn. 200"></label>
+        <label>Kategori<select name="cat" required></select></label>
+      </div>
+      <details id="alt-price">
+        <summary>İkinci fiyat (kg / porsiyon gibi)</summary>
+        <div class="two">
+          <label>1. fiyat etiketi<input name="unit1" maxlength="30" placeholder="Porsiyon"></label>
+          <label>2. fiyat (₺)<input name="price2" inputmode="decimal" placeholder="örn. 1400"></label>
+          <label>2. fiyat etiketi<input name="unit2" maxlength="30" placeholder="Kg"></label>
+        </div>
+      </details>
+      <div class="two">
+        <label>Rozet<input name="badge" maxlength="30" placeholder="Popüler, Yeni, İmza…"></label>
+      </div>
+      <label class="check"><input type="checkbox" name="featured"> Ana sayfada "Öne Çıkanlar"da göster (görsel gerekir)</label>
+      <label class="check"><input type="checkbox" name="available" checked> Satışta (kapalıysa menüde "Tükendi" görünür)</label>
+    </div>
+    <footer>
+      <button type="button" class="btn danger" id="item-del">Sil</button>
+      <span class="grow"></span>
+      <button type="button" class="btn ghost" id="dlg-cancel">Vazgeç</button>
+      <button type="submit" class="btn primary">Tamam</button>
+    </footer>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/admin/admin.js"></script>
+</body>
+</html>

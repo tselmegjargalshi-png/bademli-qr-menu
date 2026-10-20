@@ -3,308 +3,87 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bademli Fırın & Cafe | Menü</title>
-<meta name="description" content="Bademli Fırın & Cafe dijital menü: magnolya, cheesecake, baklava, kahveler ve soğuk içecekler. Tadı hayal et.">
-<meta name="theme-color" content="#15110e">
-<meta property="og:title" content="Bademli Fırın & Cafe | Menü">
-<meta property="og:description" content="Tatlılar, pastalar, kahveler ve daha fazlası. Tadı hayal et.">
-<meta property="og:image" content="assets/logo.png">
-<link rel="icon" href="assets/logo.png">
+<title>Bademli Fırın & Cafe · Menü</title>
+<meta name="description" content="Bademli Fırın & Cafe dijital menü: magnolyalar, cheesecake, baklava, kahveler ve soğuk içecekler. Milas / Muğla. Tadı hayal et.">
+<meta name="theme-color" content="#0e0c0a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bademli Fırın & Cafe · Menü">
+<meta property="og:description" content="Tatlılar, pastalar, baklavalar ve kahveler. Tadı hayal et.">
+<meta property="og:image" content="/assets/logo-512.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/logo-96.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#15110e;
-  --tan:#cfa773;
-  --blush:#e6d3ca;
-  --blush-2:#f3e9e3;
-  --paper:#fffdfb;
-  --mute:#7b6c61;
-  --r:22px;
-  --serif:'Young Serif',Georgia,serif;
-  --sans:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--sans);background:var(--blush-2);color:var(--ink);line-height:1.5;padding-bottom:env(safe-area-inset-bottom)}
-img{max-width:100%;display:block}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--tan);outline-offset:3px;border-radius:8px}
-.hero{background:var(--ink);color:var(--paper);position:relative;overflow:hidden;padding:max(28px,env(safe-area-inset-top)) 20px 64px;text-align:center}
-.hero::before{content:"";position:absolute;inset:auto -20% -55% -20%;height:70%;background:radial-gradient(closest-side,rgba(207,167,115,.28),transparent 70%)}
-.hero .logo{width:min(46vw,200px);height:auto;margin:8px auto 18px;border-radius:50%;box-shadow:0 0 0 6px rgba(207,167,115,.18),0 24px 60px rgba(0,0,0,.5);position:relative}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,9vw,3.6rem);line-height:1.05;letter-spacing:-.01em;position:relative}
-.hero p{color:#d9c9b9;margin:10px auto 22px;max-width:30ch;font-size:1.02rem;position:relative}
-.cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:999px;font-weight:600;text-decoration:none;font-size:.98rem;min-height:46px}
-.btn.primary{background:var(--tan);color:var(--ink)}
-.btn.ghost{border:1.5px solid rgba(255,255,255,.28);color:var(--paper)}
-.btn svg{width:18px;height:18px;flex:none}
-.edge{display:block;width:100%;height:22px;margin-top:-1px;background:radial-gradient(circle at 14px 0,var(--ink) 13px,transparent 14px) 0 0/28px 22px repeat-x}
-.feat{padding:34px 0 8px}
-.sec-head{padding:0 20px;margin-bottom:14px}
-.sec-head h2{font-family:var(--serif);font-weight:400;font-size:1.65rem;line-height:1.15}
-.sec-head p{color:var(--mute);font-size:.95rem;margin-top:2px}
-.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.rail::-webkit-scrollbar{display:none}
-.card{flex:0 0 min(78vw,300px);scroll-snap-align:start;border-radius:var(--r);overflow:hidden;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;min-height:300px;position:relative}
-.card .ph{flex:1;min-height:170px;background-size:cover;background-position:center;position:relative}
-.card .info{padding:16px 18px 18px;background:var(--ink)}
-.card h3{font-family:var(--serif);font-weight:400;font-size:1.25rem;line-height:1.2}
-.card p{font-size:.9rem;color:#d3c3b3;margin:4px 0 10px}
-.card .price{font-weight:700;color:var(--tan);font-size:1.15rem}
-.badge{position:absolute;top:12px;left:12px;z-index:1;background:var(--tan);color:var(--ink);font-weight:700;font-size:.78rem;padding:5px 11px;border-radius:999px}
-.nav{position:sticky;top:0;z-index:20;background:rgba(243,233,227,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(21,17,14,.08);padding-top:env(safe-area-inset-top)}
-.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.chips::-webkit-scrollbar{display:none}
-.chip{flex:none;border:1.5px solid rgba(21,17,14,.16);background:transparent;color:var(--ink);padding:9px 16px;border-radius:999px;font:600 .92rem var(--sans);cursor:pointer;min-height:40px;text-decoration:none;display:inline-flex;align-items:center}
-.chip[aria-current="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-main{max-width:760px;margin:0 auto;padding:8px 20px 40px}
-.cat{padding-top:34px;scroll-margin-top:64px}
-.cat h2{font-family:var(--serif);font-weight:400;font-size:1.9rem;line-height:1.1}
-.cat .note{color:var(--mute);font-size:.95rem;margin:4px 0 14px;max-width:46ch}
-.list{background:var(--paper);border-radius:var(--r);padding:6px 18px;box-shadow:0 1px 0 rgba(21,17,14,.04),0 14px 30px -18px rgba(70,40,20,.35)}
-.item{padding:13px 0;border-bottom:1px solid var(--blush);display:flex;gap:12px;align-items:center}
-.item:last-child{border-bottom:0}
-.item .body{flex:1;min-width:0}
-.item .th{width:68px;height:68px;border-radius:16px;object-fit:cover;flex:none;background:var(--blush)}
-.row{display:flex;align-items:baseline;gap:8px}
-.row .n{font-weight:600;font-size:1.04rem}
-.row .dots{flex:1;border-bottom:2px dotted #cdb8aa;transform:translateY(-4px);min-width:12px}
-.row .p{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
-.row .p small{font-weight:500;color:var(--mute);font-size:.8rem;margin-left:4px}
-.item .d{color:var(--mute);font-size:.9rem;margin-top:2px;max-width:48ch}
-.tag{display:inline-block;background:var(--ink);color:var(--tan);font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:999px;margin-left:8px;vertical-align:2px}
-footer{background:var(--ink);color:var(--paper);text-align:center;padding:44px 20px calc(40px + env(safe-area-inset-bottom));margin-top:20px}
-footer img{width:88px;height:88px;margin:0 auto 14px;border-radius:50%}
-footer h2{font-family:var(--serif);font-weight:400;font-size:1.5rem}
-footer p{color:#d3c3b3;margin:6px 0 18px}
-footer .cta{margin-bottom:18px}
-footer small{color:#9c8d7f;display:block;font-size:.82rem}
-@media (min-width:700px){
-  .hero{padding-bottom:84px}
-  .rail{padding-left:max(20px,calc((100vw - 760px)/2))}
-  .sec-head{max-width:760px;margin-left:auto;margin-right:auto}
-  .chips{justify-content:center;flex-wrap:wrap}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/data/menu.json" as="fetch" crossorigin>
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-
 <header class="hero">
-  <img class="logo" src="assets/logo.png" alt="Bademli Fırın & Cafe logosu" width="200" height="200">
-  <h1>Tadı hayal et.</h1>
-  <p>Fırından çıkan tatlılar, taze kahveler ve serinleten içecekler.</p>
-  <div class="cta">
-    <a class="btn primary" href="tel:+905013440048" aria-label="Bademli'yi ara">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-      Ara
+  <div class="hero-glow" aria-hidden="true"></div>
+  <img class="hero-logo" src="/assets/logo-512.webp" width="256" height="256" alt="Bademli Fırın & Cafe logosu">
+  <h1 class="hero-title" data-s="name">Bademli Fırın &amp; Cafe</h1>
+  <p class="hero-tag" data-s="tagline">Tadı Hayal Et</p>
+  <p class="hero-city"><span data-s="city">Milas / Muğla</span></p>
+  <nav class="hero-actions" aria-label="İletişim">
+    <a class="pill pill-gold" id="act-call" href="tel:+905015974848">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      Sipariş Hattı
     </a>
-    <a class="btn ghost" href="https://wa.me/905013440048" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
-      WhatsApp
+    <a class="pill" id="act-ig" href="https://instagram.com/bademlipastacafe" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm6-7.9a1.1 1.1 0 1 1-1.1-1.1A1.1 1.1 0 0 1 18 7.1zM21.9 8a7 7 0 0 0-1.9-4.9A7 7 0 0 0 15 1.1C13.1 1 10.9 1 9 1.1a7 7 0 0 0-5 1.9A7 7 0 0 0 2.1 8C2 9.9 2 14.1 2.1 16a7 7 0 0 0 1.9 4.9A7 7 0 0 0 9 22.9c1.9.1 4.1.1 6 0a7 7 0 0 0 4.9-1.9 7 7 0 0 0 1.9-5c.2-1.8.2-6.1.1-8zm-2.4 10.2a3.3 3.3 0 0 1-1.8 1.8c-1.3.5-4.3.4-5.7.4s-4.4.1-5.7-.4a3.3 3.3 0 0 1-1.8-1.8c-.5-1.3-.4-4.3-.4-5.7s-.1-4.4.4-5.7a3.3 3.3 0 0 1 1.8-1.8C7.6 4.3 10.6 4.4 12 4.4s4.4-.1 5.7.4a3.3 3.3 0 0 1 1.8 1.8c.5 1.3.4 4.3.4 5.7s.1 4.4-.4 5.7z"/></svg>
+      Instagram
     </a>
-  </div>
+    <a class="pill" id="act-map" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
+      Yol Tarifi
+    </a>
+  </nav>
 </header>
-<span class="edge" aria-hidden="true"></span>
+<svg class="hero-edge" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h400v6C300 26 100 26 0 6z"/></svg>
 
-<section class="feat" aria-labelledby="feat-t">
-  <div class="sec-head">
-    <h2 id="feat-t">Vitrinin yıldızları</h2>
-    <p>En çok sevilenler, tek bakışta.</p>
-  </div>
-  <div class="rail" id="rail"></div>
-</section>
+<div class="bar" id="bar">
+  <label class="search">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.05l4.25 4.24-1.42 1.42-4.24-4.25A7.5 7.5 0 1 1 10.5 3zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z"/></svg>
+    <input id="q" type="search" placeholder="Menüde ara… (ör. magnolya, latte)" autocomplete="off" enterkeyhint="search" aria-label="Menüde ara">
+    <button id="q-clear" type="button" aria-label="Aramayı temizle" hidden>×</button>
+  </label>
+  <nav class="chips" id="chips" aria-label="Kategoriler"></nav>
+</div>
 
-<nav class="nav" aria-label="Menü kategorileri">
-  <div class="chips" id="chips"></div>
-</nav>
+<main id="main">
+  <section class="featured" id="featured" aria-labelledby="f-title" hidden>
+    <div class="sec-head"><h2 id="f-title">Öne Çıkanlar</h2><p>Bademli'nin en sevilen lezzetleri</p></div>
+    <div class="f-track" id="f-track"></div>
+  </section>
+  <div id="menu" aria-live="polite"><p class="loading">Menü yükleniyor…</p></div>
+  <p class="empty" id="empty" hidden>Aradığınız ürün bulunamadı. Farklı bir kelime deneyin.</p>
+</main>
 
-<main id="menu"></main>
-
-<footer>
-  <img src="assets/logo.png" alt="" width="88" height="88">
-  <h2>Bademli Fırın Kafe</h2>
-  <p>Sipariş ve rezervasyon için bize ulaşın.</p>
-  <div class="cta">
-    <a class="btn primary" href="tel:+905013440048">0501 344 0048</a>
-    <a class="btn ghost" href="https://www.bademlipastacafe.com.tr" target="_blank" rel="noopener">bademlipastacafe.com.tr</a>
-  </div>
-  <small>İstek, öneri ve şikayetleriniz için bize yazın. Fiyatlar TL cinsindendir.</small>
+<footer class="foot">
+  <img src="/assets/logo-192.png" width="72" height="72" alt="" loading="lazy">
+  <p class="foot-name" data-s="name">Bademli Fırın &amp; Cafe</p>
+  <address>
+    <a id="f-addr" href="#" target="_blank" rel="noopener"><span data-s="address"></span></a>
+    <span>Sipariş &amp; Paket Servis: <a id="f-order" href="#"><b data-s="orderPhone"></b></a></span>
+    <span>İstek, Öneri, Şikayet: <a id="f-wa" href="#" target="_blank" rel="noopener"><b data-s="feedbackPhone"></b> (WhatsApp)</a></span>
+    <a id="f-web" href="#" target="_blank" rel="noopener"><span data-s="website"></span></a>
+  </address>
+  <p class="foot-note" data-s="notice"></p>
 </footer>
 
-<script>
-const T = "₺";
-const P = n => "https://cdn.jsdelivr.net/gh/tselmegjargalshi-png/bademli-qr-menu@3cd53e45cd7782707544d25677d0a908165e3190/assets/p/" + n + ".webp";
-const CATS = [
- {id:"magnolya", t:"Magnolyalar", note:"Bisküvi, krema ve taze meyveyle, bardakta.", items:[
-  {n:"Çilekli Magnolya", d:"Taze çilek ve vanilyalı krema.", p:200},
-  {n:"Çilek Muz Magnolya", d:"Çilek ve muz, kremayla katmanlı.", p:200},
-  {n:"Oreolu Magnolya", d:"Ezilmiş Oreo ve sütlü krema.", p:200, img:"oreolu-magnolya"},
-  {n:"Antep Fıstıklı Magnolya", d:"Antep fıstığı serpilmiş krema.", p:200, img:"antep-magnolya"},
-  {n:"Orman Meyveli Magnolya", d:"Orman meyvesi sosuyla ferah.", p:200, img:"orman-magnolya"},
-  {n:"Frambuazlı Magnolya", d:"Ekşimsi frambuaz, tatlı krema.", p:200, img:"frambuazli-magnolya"},
-  {n:"Dubai Magnolya", d:"Kadayıf ve fıstık kreması, çıtır dokulu.", p:250, tag:"Yeni", img:"dubai-magnolya"},
-  {n:"Bademli-Çikolatalı Magnolya", d:"Bademli çikolata ve krema.", p:250, img:"bademli-magnolya"},
-  {n:"Lotus-Muz Magnolya", d:"Lotus bisküvisi ve muz.", p:250}
- ]},
- {id:"muhallebi", t:"Muhallebiler ve Sütlü", note:"Hafif, sütlü, günlük hazırlanır.", items:[
-  {n:"Damla Sakızlı Muhallebi", d:"Damla sakızının ferah kokusu.", p:185},
-  {n:"Lotuslu Muhallebi", d:"Karamelize lotus ve sütlü muhallebi.", p:185, img:"lotus-muhallebi"},
-  {n:"Tel Kadayıflı Muhallebi", d:"Çıtır tel kadayıfla.", p:185},
-  {n:"Antep Fıstıklı Muhallebi", d:"Bol Antep fıstıklı.", p:185},
-  {n:"Oreolu Muhallebi", d:"Oreo parçacıklı.", p:185},
-  {n:"Sütlaç", d:"Fırınlanmış, geleneksel.", p:200, img:"sutlac"}
- ]},
- {id:"cheesecake", t:"Cheesecake'ler", note:"Kremsi, yoğun, soğuk servis.", items:[
-  {n:"Limonlu Cheesecake", d:"Ferah limon dokunuşu.", p:245, img:"limonlu-cheesecake"},
-  {n:"Frambuazlı Cheesecake", d:"Frambuaz soslu.", p:245, img:"frambuazli-cheesecake"},
-  {n:"Lotuslu Cheesecake", d:"Lotus kreması ve bisküvi.", p:275, img:"lotus-cheesecake"},
-  {n:"San Sebastian", d:"Yanık yüzeyli, akışkan merkezli.", p:275, tag:"Favori", img:"san-sebastian"}
- ]},
- {id:"pasta", t:"Pastalar ve Rulolar", note:"Dilim pastalar ve fırın klasikleri.", items:[
-  {n:"Snickers Pasta", d:"Karamel, fıstık ve çikolata.", p:325, img:"snickers-pasta"},
-  {n:"Bella Vista", d:"Kremalı, çikolata soslu klasik.", p:260},
-  {n:"Muska Pasta Çikolatalı", d:"Yumuşak çikolatalı muska.", p:250},
-  {n:"Muska Pasta Lotuslu", d:"Lotus kremalı muska.", p:260},
-  {n:"Mousse Pasta Çeşitleri", d:"Günün mousse seçenekleri.", p:250},
-  {n:"Lotuslu Rulo Pasta", d:"Lotus kremalı rulo.", p:245},
-  {n:"Çikolatalı Rulo Pasta", d:"Çikolata kremalı rulo.", p:200, img:"cikolatali-rulo"},
-  {n:"Trileçe", d:"Üç sütlü, karamel soslu.", p:220, img:"trilece"},
-  {n:"Tiramisu", d:"Kahveli, mascarpone kremalı.", p:220, img:"tiramisu"},
-  {n:"Brownie", d:"Yoğun çikolatalı, yumuşak.", p:250}
- ]},
- {id:"kase", t:"Kase ve Kaşık Tatlıları", note:"Kaşıkla yenen, tek kişilik.", items:[
-  {n:"Malaga", d:"Kremalı kase tatlısı.", p:210},
-  {n:"Snickers", d:"Karamel ve fıstıklı kase.", p:210},
-  {n:"Çilekli Cup", d:"Çilek ve krema katmanları.", p:220, img:"cilekli-cup"},
-  {n:"İncir Uyutması", d:"İncir ve ceviz, şerbetli.", p:200},
-  {n:"Supangle", d:"Çikolatalı, sıcak servis.", p:200, img:"supangle"},
-  {n:"Profiterol", d:"Çikolata soslu, kremalı.", p:220},
-  {n:"Aile Boyu Profiterol", d:"Paylaşmalık büyük boy.", p:450}
- ]},
- {id:"ekler", t:"Ekler ve Makaron", note:"Küçük ısırıklar.", items:[
-  {n:"Klasik Ekler", d:"Vanilyalı krema, çikolata kaplı.", p:50},
-  {n:"Lotus, Limon, Antep Ekler", d:"Seçtiğiniz krema ile.", p:60, img:"ekler"},
-  {n:"Makaron", d:"Renkli, çıtır kabuklu.", p:80}
- ]},
- {id:"baklava", t:"Baklavalar", note:"Fiyatlar porsiyon / kilogram olarak.", items:[
-  {n:"Soğuk Baklava", d:"Sütlü, hafif şerbetli.", p:400, kg:1400},
-  {n:"Antep Fıstıklı Baklava", d:"Bol Antep fıstıklı.", p:400, kg:1400, tag:"Usta işi", img:"antep-baklava"},
-  {n:"Cevizli Baklava", d:"Cevizli, çıtır kat kat.", p:250, kg:800, img:"cevizli-baklava"}
- ]},
- {id:"firin", t:"Fırın ve Tuzlular", note:"Her sabah taze.", items:[
-  {n:"Simit", d:"Çıtır, susamlı.", p:30},
-  {n:"Poğaça Çeşitleri", d:"Günün çeşitleri.", p:50},
-  {n:"İzmir Bomba", d:"Yumuşak, dolgulu.", p:75},
-  {n:"Milas Böreği", d:"El açması.", p:250, kg:700},
-  {n:"Kuru Pasta Çeşitleri", d:"Çay yanına ideal.", p:200, kg:600},
-  {n:"Kahvaltı Tabağı", d:"Zengin, doyurucu.", p:350}
- ]},
- {id:"yas", t:"Yaş Pasta", note:"Doğum günü ve özel günler için. Siparişle hazırlanır.", items:[
-  {n:"4-6 Kişilik Yaş Pasta", d:"", p:700, img:"yas-pasta"},
-  {n:"8-10 Kişilik Yaş Pasta", d:"", p:800}
- ]},
- {id:"kahve", t:"Kahveler", note:"Sıcak kahveler ve çaylar.", items:[
-  {n:"Espresso", d:"Küçük ama güçlü, yoğun ve aromatik.", p:130},
-  {n:"Americano", d:"Espresso üzerine sıcak su, hafif ve kolay içimli.", p:160},
-  {n:"Latte", d:"Espresso, bol sıcak süt ve hafif süt köpüğü.", p:170},
-  {n:"Cappuccino", d:"Eşit espresso, sıcak süt ve kalın süt köpüğü.", p:175},
-  {n:"Macchiato", d:"Espresso üzerine az süt köpüğü.", p:160},
-  {n:"Mocha", d:"Espresso, sıcak çikolata ve süt.", p:180},
-  {n:"Flat White", d:"Espresso ve mikro köpüklü süt.", p:160},
-  {n:"Türk Kahvesi", d:"Damakta iz bırakan geleneksel lezzet.", p:100},
-  {n:"Damla Sakızlı Türk Kahvesi", d:"Damla sakızı ve Türk kahvesi bir arada.", p:120, tag:"Özel"},
-  {n:"Sıcak Çikolata", d:"Çikolata ve sütün enfes birleşimi.", p:170},
-  {n:"Siyah Çay", d:"Geleneksel demleme.", p:50},
-  {n:"Bitki Çayları", d:"Papatya, nane, rooibos, hibiskus gibi.", p:140}
- ]},
- {id:"soguk-kahve", t:"Soğuk Kahveler", note:"Buzlu ve ferah.", items:[
-  {n:"Ice Latte", d:"", p:185, img:"ice-latte"},
-  {n:"Ice Caramel Latte", d:"", p:190, img:"ice-caramel"},
-  {n:"Ice Filtre", d:"", p:180},
-  {n:"Ice Americano", d:"", p:170, img:"ice-americano"},
-  {n:"Ice Spanish Latte", d:"Tatlı, sütlü ve kremsi.", p:200},
-  {n:"Ice Mocha", d:"", p:190, img:"ice-mocha"},
-  {n:"Frozen", d:"", p:190, img:"frozen"},
-  {n:"Matcha", d:"", p:195, img:"matcha"},
-  {n:"Milkshake", d:"", p:195, img:"milkshake"},
-  {n:"Affogato", d:"Dondurma üzerine sıcak espresso.", p:230}
- ]},
- {id:"icecek", t:"Soğuk İçecekler", note:"Meşrubat, limonata ve ferahlatıcılar.", items:[
-  {n:"Cool Lime", d:"Taze lime ile ferah.", p:200, img:"cool-lime"},
-  {n:"Berry Hibiscus", d:"Orman meyveli, hibiskus çaylı.", p:200, img:"berry-hibiscus"},
-  {n:"Limonata", d:"", p:200, img:"limonata"},
-  {n:"Portakal Suyu", d:"", p:200},
-  {n:"Churchill", d:"", p:150},
-  {n:"Lipton Çeşitleri", d:"", p:100, img:"lipton"},
-  {n:"Meyve Suyu Çeşitleri", d:"", p:100},
-  {n:"Pepsi", d:"", p:100},
-  {n:"Niğde Gazozu", d:"", p:80},
-  {n:"Meyveli Soda", d:"", p:80},
-  {n:"Sade Soda", d:"", p:60},
-  {n:"Ayran", d:"", p:60}
- ]}
-];
+<dialog id="sheet" aria-labelledby="s-name">
+  <form method="dialog"><button class="s-close" aria-label="Kapat">×</button></form>
+  <div class="s-media" id="s-media"></div>
+  <div class="s-body">
+    <p class="s-cat" id="s-cat"></p>
+    <h3 id="s-name"></h3>
+    <p class="s-desc" id="s-desc"></p>
+    <div class="s-prices" id="s-prices"></div>
+  </div>
+</dialog>
 
-const FEATURED = [
- {n:"Dubai Magnolya", d:"Kadayıf ve fıstık kreması.", p:250, b:"Yeni", img:"dubai-magnolya"},
- {n:"San Sebastian", d:"Yanık yüzeyli, akışkan merkezli.", p:275, b:"Favori", img:"san-sebastian"},
- {n:"Lotuslu Cheesecake", d:"Lotus kreması ve bisküvi.", p:275, img:"lotus-cheesecake"},
- {n:"Antep Fıstıklı Baklava", d:"Usta işi, bol fıstıklı.", p:400, b:"Porsiyon", img:"antep-baklava"},
- {n:"Snickers Pasta", d:"Karamel, fıstık ve çikolata.", p:325, img:"snickers-pasta"},
- {n:"Tiramisu", d:"Kahveli, mascarpone kremalı.", p:220, img:"tiramisu"}
-];
-
-const fmt = n => n.toLocaleString("tr-TR");
-const el = (tag, cls, html) => { const e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; };
-const esc = s => s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-
-const rail = document.getElementById("rail");
-FEATURED.forEach(f=>{
-  const c = el("article","card");
-  c.innerHTML = `${f.b?`<span class="badge">${esc(f.b)}</span>`:""}
-    <div class="ph" role="img" aria-label="${esc(f.n)}" style="background-image:url('${P(f.img)}')"></div>
-    <div class="info"><h3>${esc(f.n)}</h3><p>${esc(f.d)}</p><span class="price">${fmt(f.p)} ${T}</span></div>`;
-  rail.appendChild(c);
-});
-
-const menu = document.getElementById("menu");
-const chips = document.getElementById("chips");
-CATS.forEach(cat=>{
-  const s = el("section","cat"); s.id = cat.id; s.setAttribute("aria-labelledby", cat.id+"-t");
-  const h = el("h2",null,esc(cat.t)); h.id = cat.id+"-t"; s.appendChild(h);
-  if(cat.note) s.appendChild(el("p","note",esc(cat.note)));
-  const list = el("div","list");
-  cat.items.forEach(i=>{
-    const it = el("div","item");
-    const price = i.kg
-      ? `${fmt(i.p)} ${T}<small>kg ${fmt(i.kg)} ${T}</small>`
-      : `${fmt(i.p)} ${T}`;
-    const th = i.img ? `<img class="th" src="${P(i.img)}" alt="${esc(i.n)}" loading="lazy" width="68" height="68">` : "";
-    it.innerHTML = `${th}<div class="body"><div class="row"><span class="n">${esc(i.n)}${i.tag?`<span class="tag">${esc(i.tag)}</span>`:""}</span><span class="dots" aria-hidden="true"></span><span class="p">${price}</span></div>${i.d?`<p class="d">${esc(i.d)}</p>`:""}</div>`;
-    list.appendChild(it);
-  });
-  s.appendChild(list);
-  menu.appendChild(s);
-  const a = el("a","chip",esc(cat.t)); a.href = "#"+cat.id; a.dataset.id = cat.id;
-  chips.appendChild(a);
-});
-
-const chipEls = [...chips.children];
-function setActive(id){
-  chipEls.forEach(c=>{
-    if(c.dataset.id===id){
-      c.setAttribute("aria-current","true");
-      const box=chips.getBoundingClientRect(), r=c.getBoundingClientRect();
-      chips.scrollTo({left: chips.scrollLeft + (r.left - box.left) - (box.width/2 - r.width/2), behavior:"smooth"});
-    } else c.removeAttribute("aria-current");
-  });
-}
-const io = new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting) setActive(e.target.id); }); },{rootMargin:"-20% 0px -70% 0px"});
-document.querySelectorAll(".cat").forEach(s=>io.observe(s));
-</script>
+<script src="/app.js" defer></script>
 </body>
 </html>

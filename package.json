@@ -1,0 +1,14 @@
+{
+  "name": "bademli-qr-menu",
+  "private": true,
+  "type": "module",
+  "description": "Bademli Fırın & Cafe dijital menü + yönetim paneli",
+  "scripts": {
+    "dev": "node dev/server.mjs",
+    "hash-password": "node dev/hash-password.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@vercel/blob": "^2.0.0"
+  }
+}
