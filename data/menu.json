@@ -1005,9 +1005,9 @@
    "unit1": "",
    "price2": null,
    "unit2": "",
-   "img": "",
+   "img": "/assets/menu/ice-spanish-latte.webp",
    "badge": "",
-   "featured": false,
+   "featured": true,
    "available": true
   },
   {
@@ -1231,7 +1231,7 @@
    "unit2": "",
    "img": "/assets/menu/matcha.webp",
    "badge": "",
-   "featured": false,
+   "featured": true,
    "available": true
   },
   {
