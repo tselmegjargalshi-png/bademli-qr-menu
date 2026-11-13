@@ -38,6 +38,7 @@
     if (s.name) document.title = s.name + ' · Menü';
   }
 
+  const kcalHtml = (it) => (it.kcal != null && it.kcal !== '' && Number.isFinite(Number(it.kcal)) ? `<p class="kcal">${Math.round(Number(it.kcal))} kcal</p>` : '');
   const price = (n) => `${fmt.format(n)} ₺`;
   function priceHtml(it) {
     if (it.price == null && it.price2 == null) return '';
@@ -71,7 +72,7 @@
       if (!items.length) continue;
       total += items.length;
       html += `<section class="cat" id="cat-${esc(c.id)}" data-cat="${esc(c.id)}"><div class="sec-head"><h2>${esc(c.name)} <small>${items.length}</small></h2>${c.note && !q ? `<p>${esc(c.note)}</p>` : ''}</div><div class="list">` +
-        items.map((it) => `<button class="item${it.available === false ? ' off' : ''}" data-id="${esc(it.id)}">${photo(it)}<div class="body"><h3>${hl(it.name)}${it.available === false ? '<span class="soldout">Tükendi</span>' : ''}</h3>${it.desc ? `<p class="desc">${hl(it.desc)}</p>` : ''}${priceHtml(it)}</div></button>`).join('') +
+        items.map((it) => `<button class="item${it.available === false ? ' off' : ''}" data-id="${esc(it.id)}">${photo(it)}<div class="body"><h3>${hl(it.name)}${it.available === false ? '<span class="soldout">Tükendi</span>' : ''}</h3>${it.desc ? `<p class="desc">${hl(it.desc)}</p>` : ''}${kcalHtml(it)}${priceHtml(it)}</div></button>`).join('') +
         '</div></section>';
     }
     $('#menu').innerHTML = html;
@@ -127,6 +128,7 @@
     $('#s-cat').textContent = cat ? cat.name : '';
     $('#s-name').textContent = it.name;
     $('#s-desc').textContent = it.desc || '';
+    { const k = $('#s-kcal'); const has = it.kcal != null && Number.isFinite(Number(it.kcal)); k.hidden = !has; k.textContent = has ? `Yaklaşık ${Math.round(Number(it.kcal))} kcal${it.kcalUnit ? ' · ' + it.kcalUnit : ''}` : ''; }
     const two = it.price != null && it.price2 != null;
     $('#s-prices').innerHTML = (it.price != null ? `<span>${two && it.unit1 ? `<small>${esc(it.unit1)}</small>` : ''}${price(it.price)}</span>` : '') +
       (it.price2 != null ? `<span>${it.unit2 ? `<small>${esc(it.unit2)}</small>` : ''}${price(it.price2)}</span>` : '');

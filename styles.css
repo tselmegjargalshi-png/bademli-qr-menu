@@ -150,3 +150,7 @@ dialog::backdrop { background: rgba(14,12,10,.55); backdrop-filter: blur(3px) }
 .g-track figure{flex:none;width:min(58vw,230px);scroll-snap-align:start;border-radius:var(--r);overflow:hidden;background:var(--ink);position:relative}
 .g-track img{width:100%;aspect-ratio:3/4;object-fit:cover}
 .g-track figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-size:.78rem;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(14,12,10,.75))}
+
+/* kalori */
+.kcal { margin-top: 4px; font-size: .74rem; font-weight: 600; color: var(--mute); letter-spacing: .02em }
+.s-kcal { margin-top: 10px; font-size: .86rem; font-weight: 600; color: var(--mute) }

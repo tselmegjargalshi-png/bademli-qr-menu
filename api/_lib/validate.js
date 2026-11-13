@@ -46,6 +46,8 @@ export function validateMenu(m) {
       price2: num(it.price2),
       unit2: str(it.unit2, 30),
       img: url(it.img),
+      kcal: (() => { const k = num(it.kcal); if (k !== null && k > 10000) throw bad('Geçersiz kalori'); return k === null ? null : Math.round(k); })(),
+      kcalUnit: str(it.kcalUnit, 30),
       badge: str(it.badge, 30),
       featured: Boolean(it.featured),
       available: it.available !== false,

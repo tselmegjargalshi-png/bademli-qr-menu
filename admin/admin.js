@@ -79,7 +79,7 @@
     $('#item-list').innerHTML = list.map((it) => `
       <div class="row${it.available === false ? ' off' : ''}" data-id="${esc(it.id)}">
         <div class="th" style="${it.img ? `background-image:url('${esc(it.img)}')` : ''}">${it.img ? '' : 'Görsel yok'}</div>
-        <div class="nm"><b>${esc(it.name)}</b><span>${esc(catName[it.cat] || '?')}${it.featured ? ' · ★ Öne çıkan' : ''}${it.available === false ? ' · Tükendi' : ''}</span>${algLine(it)}</div>
+        <div class="nm"><b>${esc(it.name)}</b><span>${esc(catName[it.cat] || '?')}${it.kcal != null ? ' · ' + it.kcal + ' kcal' : ''}${it.featured ? ' · ★ Öne çıkan' : ''}${it.available === false ? ' · Tükendi' : ''}</span>${algLine(it)}</div>
         <div class="pr"><input inputmode="decimal" value="${it.price ?? ''}" aria-label="${esc(it.name)} fiyatı" data-price></div>
         <button class="btn edit">Düzenle</button>
       </div>`).join('') || '<p class="hint">Ürün bulunamadı.</p>';
@@ -114,7 +114,7 @@
     $('#dlg-title').textContent = it ? 'Ürünü Düzenle' : 'Yeni Ürün';
     form.cat.innerHTML = menu.categories.map((c) => `<option value="${esc(c.id)}">${esc(c.name)}</option>`).join('');
     const d = it || { cat: $('#f-cat').value || menu.categories[0]?.id, available: true };
-    for (const k of ['name', 'desc', 'price', 'price2', 'unit1', 'unit2', 'badge']) form[k].value = d[k] ?? '';
+    for (const k of ['name', 'desc', 'price', 'price2', 'unit1', 'unit2', 'badge', 'kcal', 'kcalUnit']) form[k].value = d[k] ?? '';
     form.cat.value = d.cat; form.featured.checked = !!d.featured; form.available.checked = d.available !== false;
     $('#alt-price').open = d.price2 != null; $('#item-del').hidden = !it;
     openAllergens(it);
@@ -175,6 +175,8 @@
     const out = { name: form.name.value.trim(), desc: form.desc.value.trim(), price: p, price2: p2, unit1: form.unit1.value.trim(), unit2: form.unit2.value.trim(),
       cat: form.cat.value, badge: form.badge.value.trim(), featured: form.featured.checked, available: form.available.checked, img,
       allergens: $('#alg-known').checked ? ALG.map((a) => a.id).filter((id) => algSel.has(id)) : undefined };
+    out.kcal = numOrNull(form.kcal.value); out.kcalUnit = form.kcalUnit.value.trim();
+    if (out.kcal !== null && !(out.kcal >= 0 && out.kcal <= 10000)) return toast('Geçersiz kalori', true);
     if (!out.name) return toast('Ürün adı gerekli', true);
     if (out.featured && !out.img) toast('Not: Öne çıkanlarda yalnızca görselli ürünler görünür');
     if (editing) Object.assign(editing, out);
