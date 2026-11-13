@@ -11,6 +11,11 @@
     ['website', 'Web sitesi'], ['mapsUrl', 'Google Haritalar bağlantısı', 'full'], ['notice', 'Menü alt notu', 'full'],
   ];
 
+  const ALG = (window.ALG_DATA && window.ALG_DATA.list) || [];
+  const ALG_BY = Object.fromEntries(ALG.map((a) => [a.id, a]));
+  const ALG_DEF = (window.ALG_DATA && window.ALG_DATA.defaults) || {};
+  const algBadge = (a) => `<span class="alg-i" style="--c:${a.c}"><svg viewBox="0 0 24 24" aria-hidden="true">${a.g}</svg></span>`;
+  let algSel = new Set();
   let menu = null, dirty = false, editing = null, pendingImg = undefined;
 
   function toast(msg, bad) {
@@ -74,10 +79,15 @@
     $('#item-list').innerHTML = list.map((it) => `
       <div class="row${it.available === false ? ' off' : ''}" data-id="${esc(it.id)}">
         <div class="th" style="${it.img ? `background-image:url('${esc(it.img)}')` : ''}">${it.img ? '' : 'Görsel yok'}</div>
-        <div class="nm"><b>${esc(it.name)}</b><span>${esc(catName[it.cat] || '?')}${it.featured ? ' · ★ Öne çıkan' : ''}${it.available === false ? ' · Tükendi' : ''}</span></div>
+        <div class="nm"><b>${esc(it.name)}</b><span>${esc(catName[it.cat] || '?')}${it.featured ? ' · ★ Öne çıkan' : ''}${it.available === false ? ' · Tükendi' : ''}</span>${algLine(it)}</div>
         <div class="pr"><input inputmode="decimal" value="${it.price ?? ''}" aria-label="${esc(it.name)} fiyatı" data-price></div>
         <button class="btn edit">Düzenle</button>
       </div>`).join('') || '<p class="hint">Ürün bulunamadı.</p>';
+  }
+  function algLine(it) {
+    if (!Array.isArray(it.allergens)) return '<span class="warn" style="display:block">⚠ Alerjen bilgisi girilmedi</span>';
+    const names = it.allergens.map((id) => ALG_BY[id] && ALG_BY[id].n).filter(Boolean);
+    return `<span style="display:block">Alerjen: ${names.length ? esc(names.join(', ')) : 'içermez'}</span>`;
   }
   $('#f-q').addEventListener('input', renderItems);
   $('#f-cat').addEventListener('change', renderItems);
@@ -107,9 +117,27 @@
     for (const k of ['name', 'desc', 'price', 'price2', 'unit1', 'unit2', 'badge']) form[k].value = d[k] ?? '';
     form.cat.value = d.cat; form.featured.checked = !!d.featured; form.available.checked = d.available !== false;
     $('#alt-price').open = d.price2 != null; $('#item-del').hidden = !it;
+    openAllergens(it);
     setPrev(d.img || ''); $('#img-hint').textContent = 'Görsel otomatik küçültülüp yüklenir.';
     dlg.showModal();
   }
+  // ---------- allergens (item dialog)
+  function renderAlgOpts() {
+    $('#alg-opts').innerHTML = ALG.map((a) => `<button type="button" class="alg-opt" data-id="${a.id}" aria-pressed="${algSel.has(a.id)}">${algBadge(a)}${esc(a.n)}</button>`).join('');
+  }
+  function openAllergens(it) {
+    const known = !!it && Array.isArray(it.allergens);
+    const guess = !known && it && Array.isArray(ALG_DEF[it.id]) ? ALG_DEF[it.id] : null;
+    algSel = new Set(known ? it.allergens : guess || []);
+    $('#alg-known').checked = known;
+    $('#alg-note').textContent = guess ? 'Ön seçili olanlar örnek tahmindir. Doğruysa "Alerjen bilgisi girildi"yi işaretleyin, yanlışsa düzeltin.' : '';
+    renderAlgOpts();
+  }
+  $('#alg-opts').addEventListener('click', (e) => {
+    const b = e.target.closest('.alg-opt'); if (!b) return;
+    algSel.has(b.dataset.id) ? algSel.delete(b.dataset.id) : algSel.add(b.dataset.id);
+    $('#alg-known').checked = true; $('#alg-note').textContent = ''; renderAlgOpts();
+  });
   const closeDlg = () => dlg.close();
   $('#dlg-x').addEventListener('click', closeDlg); $('#dlg-cancel').addEventListener('click', closeDlg);
 
@@ -145,7 +173,8 @@
     if ((p !== null && !(p >= 0)) || (p2 !== null && !(p2 >= 0))) return toast('Geçersiz fiyat', true);
     const img = pendingImg !== undefined ? pendingImg : editing?.img || '';
     const out = { name: form.name.value.trim(), desc: form.desc.value.trim(), price: p, price2: p2, unit1: form.unit1.value.trim(), unit2: form.unit2.value.trim(),
-      cat: form.cat.value, badge: form.badge.value.trim(), featured: form.featured.checked, available: form.available.checked, img };
+      cat: form.cat.value, badge: form.badge.value.trim(), featured: form.featured.checked, available: form.available.checked, img,
+      allergens: $('#alg-known').checked ? ALG.map((a) => a.id).filter((id) => algSel.has(id)) : undefined };
     if (!out.name) return toast('Ürün adı gerekli', true);
     if (out.featured && !out.img) toast('Not: Öne çıkanlarda yalnızca görselli ürünler görünür');
     if (editing) Object.assign(editing, out);

@@ -18,6 +18,7 @@ const url = (v) => {
   if (/^https:\/\/[^\s"'<>]+$/.test(s)) return s;
   throw bad('Geçersiz görsel adresi');
 };
+const ALLERGENS = ['yer-fistigi', 'kabuklu-yemis', 'kabuklu-deniz', 'yumusakcalar', 'balik', 'yumurta', 'sut', 'gluten', 'soya', 'susam', 'kereviz', 'hardal', 'lupin', 'sulfit'];
 function bad(message) {
   return Object.assign(new Error(message), { status: 400 });
 }
@@ -49,6 +50,8 @@ export function validateMenu(m) {
       featured: Boolean(it.featured),
       available: it.available !== false,
     };
+    // allergens: dizi = bilgi girilmiş ([] = alerjen içermez); alan yoksa = bilgi girilmemiş
+    if (Array.isArray(it.allergens)) item.allergens = ALLERGENS.filter((a) => it.allergens.includes(a));
     if (!item.name) throw bad('Ürün adı boş olamaz');
     if (!catIds.has(item.cat)) throw bad(`"${item.name}" için kategori bulunamadı`);
     if (seen.has(item.id)) throw bad(`Tekrarlanan ürün: ${item.name}`);

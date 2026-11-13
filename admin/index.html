@@ -94,6 +94,12 @@
       <div class="two">
         <label>Rozet<input name="badge" maxlength="30" placeholder="Popüler, Yeni, İmza…"></label>
       </div>
+      <fieldset class="alg-edit" id="alg-edit">
+        <legend>Alerjenler</legend>
+        <label class="check"><input type="checkbox" id="alg-known"> Alerjen bilgisi girildi <span class="hint">(kapalıysa menüde bu ürün alerjen filtresinde gizlenir)</span></label>
+        <div id="alg-opts" class="alg-opts"></div>
+        <p class="hint" id="alg-note"></p>
+      </fieldset>
       <label class="check"><input type="checkbox" name="featured"> Ana sayfada "Öne Çıkanlar"da göster (görsel gerekir)</label>
       <label class="check"><input type="checkbox" name="available" checked> Satışta (kapalıysa menüde "Tükendi" görünür)</label>
     </div>
@@ -107,6 +113,7 @@
 </dialog>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/allergens-data.js"></script>
 <script src="/admin/admin.js"></script>
 </body>
 </html>

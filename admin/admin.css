@@ -76,3 +76,14 @@ dialog footer{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .toast.bad{background:var(--red)}
 @media(max-width:560px){.row .pr{width:80px}.top-in .btn:not(.primary):not(.ghost){display:none}}
+
+/* alerjen düzenleme */
+.alg-edit{border:1px solid var(--line);border-radius:16px;padding:12px;display:grid;gap:10px;min-width:0}
+.alg-edit legend{padding:0 6px;font-size:.82rem;font-weight:700;color:var(--mute)}
+.alg-opts{display:flex;flex-wrap:wrap;gap:6px}
+.alg-opts[data-off="1"]{opacity:.4;pointer-events:none}
+.alg-opt{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:4px 12px 4px 5px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:.84rem;font-weight:600}
+.alg-opt[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--gold-2)}
+.alg-i{--c:#888;width:26px;height:26px;border-radius:28%;background:var(--c);color:var(--c);display:inline-grid;place-items:center;flex:none}
+.alg-i svg{width:72%;height:72%;fill:#fff}
+.row .nm span.warn{color:var(--red);font-weight:600}
